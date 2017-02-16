@@ -40,10 +40,12 @@ class TextBuilder(val separator: String) {
     assert(collection != null)
     assert(separator != null)
 
-    val cs: TextBuilder = new TextBuilder(separator) {
-      collection.foreach(e => cs.add(e))
-    }
+    val cs: TextBuilder = new TextBuilder(separator)
+    for (e <- collection) cs.add(e)
 
     add(cs)
+  }
+  def add(collection: Seq[Any]) {
+    add(collection, " ")
   }
 }

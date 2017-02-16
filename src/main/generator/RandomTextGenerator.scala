@@ -17,11 +17,11 @@ class RandomTextGenerator(minLength: Int, maxLength: Int, minLetter: Char, maxLe
   /** Le générateur de taille de mot */
   assert(minLength >= 0)
   assert(maxLength >= minLength)
-  private val lengthGen : Generator[Int] = new RandomNumberGenerator(minLength, maxLength)
+  private val lengthGen : Generator[Int] = new RandomIntGenerator(minLength, maxLength)
 
   /** Le générateur de lettre */
   assert(maxLetter >= minLetter)
-  private val letterGen : Generator[Int] = new RandomNumberGenerator(minLetter, maxLetter)
+  private val letterGen : Generator[Int] = new RandomIntGenerator(minLetter, maxLetter)
 
   /**
     * Construit un nouveau générateur de mots, de longueur comprise entre
@@ -43,7 +43,7 @@ class RandomTextGenerator(minLength: Int, maxLength: Int, minLetter: Char, maxLe
   // COMMANDE
   def getValue : String = {
     var txt = ""
-    for (i <- 0 until lengthGen.getValue - 1) {
+    for (i <- 0 until lengthGen.getValue) {
       txt += letterGen.getValue.asInstanceOf[Char]
     }
     txt

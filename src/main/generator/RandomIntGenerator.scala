@@ -4,7 +4,7 @@ package main.generator
   * Génère un nouveau nombre entier de manière aléatoire, dont
   * la valeur est comprise dans un certain intervalle donné
   */
-class RandomNumberGenerator(val min: Int, val max: Int) extends Generator[Int] {
+class RandomIntGenerator(val min: Int, val max: Int) extends Generator[Int] {
   // CONSTRUCTION
   /**
     * Construit un nouveau générateur dont les valeurs générées,
@@ -18,7 +18,7 @@ class RandomNumberGenerator(val min: Int, val max: Int) extends Generator[Int] {
   /**
     * Construit un nouveau générateur de valeurs sans bornes, i.e
     * les valeurs générées couvriront tout l'intervalle de définition
-    * des nombres entiers de type java int.
+    * des nombres entiers de type scala Int.
     */
   def this() {
     this(Integer.MIN_VALUE, Integer.MAX_VALUE)
