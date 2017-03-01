@@ -1,4 +1,6 @@
-package main.generator
+package main.generator.examples
+
+import main.generator.Generator
 
 /**
   * Génère un nouveau not aléatoire à partir d'un alphabet
@@ -6,7 +8,6 @@ package main.generator
   * @construct Construit un nouveau générateur de mots, de longueur comprise entre
   *   minLength et maxLength, et dont les lettres appartiennent
   *   à l'intervalle de lettres [minLetter, maxLetter] spécifié.
-  *
   * @param minLength La longueur minimale des mots pouvant être générés
   * @param maxLength La longueur maximale des mots pouvant être générés
   * @param minLetter La longueur minimale des mots pouvant être générés

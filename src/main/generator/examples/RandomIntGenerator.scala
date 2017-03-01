@@ -1,4 +1,6 @@
-package main.generator
+package main.generator.examples
+
+import main.generator.Generator
 
 /**
   * Génère un nouveau nombre entier de manière aléatoire, dont

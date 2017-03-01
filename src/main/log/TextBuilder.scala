@@ -10,6 +10,7 @@ class TextBuilder(val separator: String) {
   /** Le constructeur de texte utilisé */
   private val builder: StringBuilder = new StringBuilder
 
+  // ALTERNATIVE
   def this() = this(" ")
 
   // REQUETE
@@ -21,12 +22,15 @@ class TextBuilder(val separator: String) {
     * à partir de la représentation textuelle d'un objet quelconque
     *
     * @param obj La sous-proposition à ajouter
+    *
+    * @return L'objet lui-même (this)
     */
-  def add(obj: Any) {
+  def add(obj: Any) : TextBuilder = {
     if (builder.length > 0) {
       builder.append(separator)
     }
     builder.append(obj.toString)
+    this
   }
 
   /**
@@ -35,8 +39,10 @@ class TextBuilder(val separator: String) {
     *
     * @param collection La collection des objets à ajouter dans le texte
     * @param separator La chaine de séparation utilisée pour séparer les objets
+    *
+    * @return L'objet lui-même (this)
     */
-  def add(collection: Seq[Any], separator: String) {
+  def add(collection: Seq[Any], separator: String) : TextBuilder = {
     assert(collection != null)
     assert(separator != null)
 
@@ -45,7 +51,5 @@ class TextBuilder(val separator: String) {
 
     add(cs)
   }
-  def add(collection: Seq[Any]) {
-    add(collection, " ")
-  }
+  def add(collection: Seq[Any]) : TextBuilder = add(collection, " ")
 }
